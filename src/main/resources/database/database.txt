@@ -1,0 +1,81 @@
+-- public.item definition
+
+-- Drop table
+
+-- DROP TABLE public.item;
+
+CREATE TABLE public.item (
+	id int8 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	"name" varchar NULL,
+	CONSTRAINT item_pk PRIMARY KEY (id)
+);
+
+-- Permissions
+
+ALTER TABLE public.item OWNER TO postgres;
+GRANT ALL ON TABLE public.item TO postgres;
+
+
+-- public."user" definition
+
+-- Drop table
+
+-- DROP TABLE public."user";
+
+CREATE TABLE public."user" (
+	id int8 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	"name" varchar NULL,
+	email varchar NULL,
+	CONSTRAINT user_pk PRIMARY KEY (id)
+);
+
+-- Permissions
+
+ALTER TABLE public."user" OWNER TO postgres;
+GRANT ALL ON TABLE public."user" TO postgres;
+
+
+-- public."order" definition
+
+-- Drop table
+
+-- DROP TABLE public."order";
+
+CREATE TABLE public."order" (
+	id int8 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	creation_date date NULL,
+	item_id int8 NULL,
+	user_id int8 NULL,
+	quantity int4 NULL,
+	complete bool NULL,
+	stock_id int8 NULL,
+	CONSTRAINT order_pk PRIMARY KEY (id),
+	CONSTRAINT order_fk FOREIGN KEY (item_id) REFERENCES public.item(id),
+	CONSTRAINT order_fk_1 FOREIGN KEY (user_id) REFERENCES public."user"(id)
+);
+
+-- Permissions
+
+ALTER TABLE public."order" OWNER TO postgres;
+GRANT ALL ON TABLE public."order" TO postgres;
+
+
+-- public.stock_movement definition
+
+-- Drop table
+
+-- DROP TABLE public.stock_movement;
+
+CREATE TABLE public.stock_movement (
+	id int8 NOT NULL GENERATED ALWAYS AS IDENTITY,
+	item_id int8 NULL,
+	quantity int4 NULL,
+	creation_date timestamp NULL,
+	CONSTRAINT stock_pk PRIMARY KEY (id),
+	CONSTRAINT stock_fk FOREIGN KEY (item_id) REFERENCES public.item(id)
+);
+
+-- Permissions
+
+ALTER TABLE public.stock_movement OWNER TO postgres;
+GRANT ALL ON TABLE public.stock_movement TO postgres;
