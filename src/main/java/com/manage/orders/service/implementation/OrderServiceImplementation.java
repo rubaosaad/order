@@ -67,8 +67,6 @@ public class OrderServiceImplementation implements OrderService {
 			}
 			stockService.updateItemsStock(orderDTO.getItem().getId(), orderDTO.getQuantity());
 			stockService.getAll();
-		}else{
-			throw new Exception("Stock empty");
 		}
 
 		return orderDTO;
