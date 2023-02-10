@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/stock")
-@Tag(name = "Stock", description = "Operations to manage stock")
+@Tag(name = "Stock", description = "Stock Apis")
 public class StockController {
 	
 	@Autowired

@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/item")
-@Tag(name = "Itens", description = "Itens methods")
+@Tag(name = "Itens", description = "Itens Apis")
 public class ItemContoller {
 	
 	@Autowired
