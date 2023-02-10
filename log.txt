@@ -1,0 +1,50 @@
+2023-02-10 12:08:02.850  INFO 31848 --- [restartedMain] com.manage.orders.OrderApplication       : Starting OrderApplication using Java 17.0.1 on EXT00367 with PID 31848 (D:\Pessoal\projetos\order\target\classes started by NB28337 in D:\Pessoal\projetos\order)
+2023-02-10 12:08:02.851  INFO 31848 --- [restartedMain] com.manage.orders.OrderApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-02-10 12:08:02.890  INFO 31848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-10 12:08:02.890  INFO 31848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-10 12:08:03.466  INFO 31848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-10 12:08:03.588  INFO 31848 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 4 JPA repository interfaces.
+2023-02-10 12:08:03.784  INFO 31848 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2023-02-10 12:08:03.808  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2023-02-10 12:08:03.809  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource commandLineArgs [org.springframework.core.env.SimpleCommandLinePropertySource] to EncryptableEnumerablePropertySourceWrapper
+2023-02-10 12:08:03.810  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2023-02-10 12:08:03.810  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2023-02-10 12:08:03.810  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2023-02-10 12:08:03.810  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2023-02-10 12:08:03.810  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2023-02-10 12:08:03.810  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-02-10 12:08:03.810  INFO 31848 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-02-10 12:08:03.850  INFO 31848 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2023-02-10 12:08:03.945  INFO 31848 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2023-02-10 12:08:03.947  INFO 31848 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2023-02-10 12:08:04.144  INFO 31848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-10 12:08:04.152  INFO 31848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-10 12:08:04.152  INFO 31848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-10 12:08:04.229  INFO 31848 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/order]  : Initializing Spring embedded WebApplicationContext
+2023-02-10 12:08:04.229  INFO 31848 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1338 ms
+2023-02-10 12:08:04.342  INFO 31848 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.5.13 by Redgate
+2023-02-10 12:08:04.343  INFO 31848 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+2023-02-10 12:08:04.343  INFO 31848 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : 
+2023-02-10 12:08:04.348  INFO 31848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-10 12:08:04.478  INFO 31848 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-10 12:08:04.491  INFO 31848 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5432/order (PostgreSQL 15.1)
+2023-02-10 12:08:04.497  WARN 31848 --- [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 15.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 14.
+2023-02-10 12:08:04.516  INFO 31848 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.012s)
+2023-02-10 12:08:04.522  INFO 31848 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2023-02-10 12:08:04.523  INFO 31848 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2023-02-10 12:08:04.621  INFO 31848 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-10 12:08:04.661  INFO 31848 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-10 12:08:04.795  INFO 31848 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-10 12:08:04.891  INFO 31848 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-02-10 12:08:05.374  INFO 31848 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-10 12:08:05.382  INFO 31848 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-10 12:08:05.871  WARN 31848 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-10 12:08:06.469  INFO 31848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-02-10 12:08:06.502  INFO 31848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/order'
+2023-02-10 12:08:06.513  INFO 31848 --- [restartedMain] com.manage.orders.OrderApplication       : Started OrderApplication in 3.993 seconds (JVM running for 4.8)
+2023-02-10 12:08:26.697  INFO 31848 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/order]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-10 12:08:26.697  INFO 31848 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-10 12:08:26.698  INFO 31848 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-02-10 12:10:04.975  INFO 31848 --- [http-nio-8080-exec-4] c.m.o.s.i.StockServiceImplementation     : Stock updated:vinho
+2023-02-10 12:10:20.344  INFO 31848 --- [http-nio-8080-exec-5] c.m.o.s.i.OrderServiceImplementation     : order complete!
+2023-02-10 12:10:20.377 ERROR 31848 --- [http-nio-8080-exec-5] c.m.o.s.i.OrderServiceImplementation     : Email sent!
