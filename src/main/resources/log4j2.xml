@@ -63,7 +63,7 @@
 
     <Loggers>
 
-        <Logger name="pt.com.sibs" additivity="false">
+        <Logger name="com.manage.orders" additivity="false">
             <AppenderRef ref="debugLog" />
             <AppenderRef ref="infoLog"  />
             <AppenderRef ref="errorLog" />
