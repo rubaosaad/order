@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -15,7 +16,7 @@ public class StockMovementDTO {
 	
 	private Long id;
 	@JsonIgnore
-	private LocalDate creationDate;
+	private Date creationDate;
 	private Item item;
 	private Integer quantity;
 

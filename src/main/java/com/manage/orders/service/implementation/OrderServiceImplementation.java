@@ -58,10 +58,8 @@ public class OrderServiceImplementation implements OrderService {
 		repository.saveAndFlush(entity);
 
 		if (entity.isComplete()) {
-			logger.info("order complete!");
 			try {
 				sendEmail(entity);
-				logger.info("email sent!");
 			}catch(Exception e) {
 				logger.error("Error to send email.");
 			}
@@ -88,16 +86,12 @@ public class OrderServiceImplementation implements OrderService {
 
 	@Override
 	public OrderDTO updateOrder(OrderDTO orderDTO) throws Exception {
-		try {
-			Order entity = modelMapper.map(orderDTO, Order.class);
-			repository.save(entity);
 
-		} catch (Exception e) {
-			throw new Exception("Not found!");
-		}
+		Order entity = modelMapper.map(orderDTO, Order.class);
+		repository.save(entity);
 		return orderDTO;
 	}
-
+	
 	@Override
 	public void deleteOrder(Long id) throws Exception {
 		try {
@@ -107,33 +101,6 @@ public class OrderServiceImplementation implements OrderService {
 		}
 	}
 
-	@Override
-	public void processIncompletedOrders() {
-		List<Order> incompletedOrdersList = repository.findAllByComplete(false);
-		incompletedOrdersList.forEach((order) -> {
-			Optional<StockMovement> stock = stockService.findByItemId(order.getItem().getId());
-			stock.ifPresent(stck -> {
-				if (stck.getQuantity() >= order.getQuantity()) {
-					Order orderPersist = new Order();
-					orderPersist.setId(order.getId());
-					orderPersist.setComplete(true);
-					orderPersist.setStock(new StockMovement(stck.getId()));
-					orderPersist.setItem(order.getItem());
-					orderPersist.setQuantity(order.getQuantity());
-					orderPersist.setCreationDate(order.getCreationDate());
-					orderPersist.setUser(order.getUser());
-					repository.save(orderPersist);
-					try {
-						sendEmail(order);
-					} catch (Exception e) {
-						logger.error("Error email send");
-					}
-					stockService.updateItemsStock(orderPersist.getItem().getId(), orderPersist.getQuantity());
-				}
-			});
-		});
-
-	}
 
 	private void sendEmail(Order order) {
 		email.send(order.getUser().getEmail(), "Order Complete", "Thank you for the order");

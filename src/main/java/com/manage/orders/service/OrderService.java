@@ -18,6 +18,5 @@ public interface OrderService {
 
 	void deleteOrder(Long id) throws Exception;
 
-	void processIncompletedOrders();
 
 }

@@ -35,16 +35,11 @@ public class ItemServiceImplementation implements ItemService {
 	}
 
 	@Override
-	public ItemDTO updateItem(ItemDTO itemDTO) throws Exception {
+	public ItemDTO updateItem(ItemDTO itemDTO) {
 
-		try {
-			Item entity = repository.getReferenceById(itemDTO.getId());
-			entity.setName(itemDTO.getName());
-			repository.save(entity);
-		} catch (Exception e) {
-			throw new Exception("Not found!");
-		}
-
+		Item entity = repository.getReferenceById(itemDTO.getId());
+		entity.setName(itemDTO.getName());
+		repository.save(entity);
 		return itemDTO;
 	}
 
@@ -57,6 +52,7 @@ public class ItemServiceImplementation implements ItemService {
 		repository.save(entity);
 		return itemDTO;
 	}
+	
 	@Override
 	public void deleteItem(Long id)  throws Exception{
 		try {

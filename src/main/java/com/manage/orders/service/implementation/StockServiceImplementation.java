@@ -43,20 +43,15 @@ public class StockServiceImplementation implements StockService {
     public StockMovementDTO addStock(StockMovementDTO stockMovementDTO) throws Exception {
         Optional<StockMovement> result = findByItemId(stockMovementDTO.getItem().getId());
         StockMovement entity = modelMapper.map(stockMovementDTO, StockMovement.class);
-        result.ifPresent((stock) -> {
-            entity.setQuantity(stock.getQuantity() + stockMovementDTO.getQuantity());
-            entity.setId(stock.getId());
-        });
-        entity.setCreationDate(new Date());
+        if(result.isPresent()){
+            entity.setQuantity(stockMovementDTO.getQuantity());
+            entity.setId(stockMovementDTO.getId());
+        };
+        entity.setCreationDate(stockMovementDTO.getCreationDate());
         repository.save(entity);
-        logger.info("Stock updated:" + entity.getItem().getName());
-        verifyOrders(stockMovementDTO);
         return stockMovementDTO;
     }
 
-    private void verifyOrders(StockMovementDTO stockMovementDTO) {
-        orderService.processIncompletedOrders();
-    }
 
     @Override
     public StockMovementDTO getStock(Long id) {
@@ -66,7 +61,6 @@ public class StockServiceImplementation implements StockService {
     @Override
     public StockMovementDTO updateStock(StockMovementDTO stockMovementDTO) {
         StockMovement entity = modelMapper.map(stockMovementDTO, StockMovement.class);
-        verifyOrders(stockMovementDTO);
         repository.save(entity);
         return stockMovementDTO;
     }
