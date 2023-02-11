@@ -25,17 +25,20 @@ public class OrderController {
 	public ResponseEntity<OrderDTO> addOrder(@RequestBody OrderDTO orderDTO) throws Exception {
 		return ResponseEntity.ok(orderService.addOrder(orderDTO));
 	}
+	
 	@PatchMapping
 	@Operation(summary = "Update order")
 	public ResponseEntity<OrderDTO> updateOrder(@RequestBody OrderDTO orderDTO) throws Exception {
 		return ResponseEntity.ok(orderService.updateOrder(orderDTO));
 	}
-	@DeleteMapping
+	
+	@DeleteMapping("/{id}")
 	@Operation(summary = "Delete order")
-	public ResponseEntity<Void> deleteOrder(@RequestBody Long id) throws Exception {
+	public ResponseEntity<Void> deleteOrder(@PathVariable Long id) throws Exception {
 		orderService.deleteOrder(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
 	@GetMapping("/{id}")
 	@Operation(summary = "Get order passing ID")
 	public ResponseEntity<OrderDTO> getOrder(@PathVariable Long id) throws Exception {

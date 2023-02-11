@@ -31,12 +31,13 @@ public class UserController {
 		return ResponseEntity.ok(userService.updateUser(userDTO));
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	@Operation(summary = "Delete user")
-	public ResponseEntity<String> deleteUser(@RequestBody Long id){
+	public ResponseEntity<String> deleteUser(@PathVariable Long id){
 		userService.deleteUser(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
 	@GetMapping("/{id}")
 	@Operation(summary = "Get user passing ID")
 	public ResponseEntity<UserDTO> getUser(@PathVariable Long id){

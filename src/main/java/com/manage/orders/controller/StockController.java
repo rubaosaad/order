@@ -30,9 +30,9 @@ public class StockController {
 		return ResponseEntity.ok(stockService.updateStock(stockMovementDTO));
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	@Operation(summary = "Delete stock")
-	public ResponseEntity<Void> deleteStock(@RequestBody Long id) throws Exception{
+	public ResponseEntity<Void> deleteStock(@PathVariable Long id) throws Exception{
 		stockService.deleteStock(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}

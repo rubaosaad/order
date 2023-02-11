@@ -30,12 +30,15 @@ public class ItemContoller {
 	public ResponseEntity<ItemDTO> updateItem(@RequestBody ItemDTO itemDTO) throws Exception{
 		return ResponseEntity.ok(itemService.updateItem(itemDTO));
 	}
-	@DeleteMapping
+	
+	@DeleteMapping("/{id}")
 	@Operation(summary = "Delete item")
-	public ResponseEntity<Void> deleteItem(@RequestBody Long id) throws Exception {
+	public ResponseEntity<Void> deleteItem(@PathVariable Long id) throws Exception {
 		itemService.deleteItem(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	
 	@GetMapping("/{id}")
 	@Operation(summary = "Get item passing ID")
 	public ResponseEntity<ItemDTO> getItem(@PathVariable Long id){

@@ -41,7 +41,7 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public void deleteUser(Long id) {
-        repository.delete(new User(id));
+        repository.deleteById(id);
     }
 
 

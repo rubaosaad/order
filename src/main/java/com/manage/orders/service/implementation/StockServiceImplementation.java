@@ -73,7 +73,7 @@ public class StockServiceImplementation implements StockService {
 
     @Override
     public void deleteStock(Long id) {
-        repository.delete(new StockMovement(id));
+        repository.deleteById(id);
 
     }
 

@@ -101,7 +101,7 @@ public class OrderServiceImplementation implements OrderService {
 	@Override
 	public void deleteOrder(Long id) throws Exception {
 		try {
-			repository.delete(new Order(id));
+			repository.deleteById(id);
 		} catch (Exception e) {
 			throw new Exception("Not found!");
 		}

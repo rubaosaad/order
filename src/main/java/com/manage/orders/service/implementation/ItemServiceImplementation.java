@@ -60,7 +60,7 @@ public class ItemServiceImplementation implements ItemService {
 	@Override
 	public void deleteItem(Long id)  throws Exception{
 		try {
-			repository.delete(new Item(id));
+			repository.deleteById(id);
 		} catch (Exception e) {
 			throw new Exception("Not found!");
 		}
